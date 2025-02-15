@@ -72,7 +72,6 @@ const Homemain = () => {
         </div>
       </div>
 
-      {/* Chat UI Section */}
       <div className="relative min-h-screen bg-base-100 flex justify-around items-center p-2">
         <div className="bg-base-100 p-6 rounded-lg w-full max-w-5xl mb-10">
           <div className="flex justify-between items-start gap-x-20">
@@ -111,7 +110,6 @@ const Homemain = () => {
         </div>
       </div>
 
-      {/* Stats Section */}
       <div className="bg-base-100 p-6 w-full text-center rounded-lg">
         <div className="flex justify-around">
           <div className="flex flex-col">

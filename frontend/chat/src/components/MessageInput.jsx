@@ -82,28 +82,26 @@ const MessageInput = () => {
     }
   };
 
-  // Send Audio to Backend
-  const sendAudioToBackend = async (base64Audio) => {
-    try {
-      const response = await fetch("http://localhost:5001/api/transcribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ audio: base64Audio, mimeType: "audio/wav", lang: "English" }),
-      });
+  // const sendAudioToBackend = async (base64Audio) => {
+  //   try {
+  //     const response = await fetch("http://localhost:5001/api/transcribe", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({ audio: base64Audio, mimeType: "audio/wav", lang: "English" }),
+  //     });
 
-      const data = await response.json();
-      if (response.ok) {
-        setText(data.transcription); // Update input with transcribed text
-      } else {
-        toast.error("Transcription failed");
-      }
-    } catch (error) {
-      console.error("Error transcribing audio:", error);
-      toast.error("Error transcribing audio.");
-    }
-  };
+  //     const data = await response.json();
+  //     if (response.ok) {
+  //       setText(data.transcription); 
+  //     } else {
+  //       toast.error("Transcription failed");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error transcribing audio:", error);
+  //     toast.error("Error transcribing audio.");
+  //   }
+  // };
 
-  // Handle Message Sending
   const handleSendMessage = async (e) => {
     e.preventDefault();
     if (!text.trim() && !imagePreview && !videoPreview) return;
@@ -172,7 +170,6 @@ const MessageInput = () => {
             onChange={handleFileChange}
           />
 
-          {/* Image Upload Button */}
           <button
             type="button"
             className="hidden sm:flex btn btn-circle text-zinc-400"
@@ -181,12 +178,10 @@ const MessageInput = () => {
             <Image size={20} />
           </button>
 
-          {/* 🎤 Microphone Button */}
           
         
         </div>
 
-        {/* Send Button */}
         <button
           type="submit"
           className="btn btn-sm btn-circle"

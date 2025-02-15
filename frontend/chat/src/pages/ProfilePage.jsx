@@ -6,7 +6,7 @@ const ProfilePage = () => {
   const { authUser, isUpdatingProfile, updateProfile } = useAuthStore();
   const [selectedImg, setSelectedImg] = useState(null);
 
-  const handleImageUpload = async (e) => { //pick picture from user
+  const handleImageUpload = async (e) => { 
     const file = e.target.files[0];
     if (!file) return;
 
@@ -30,7 +30,6 @@ const ProfilePage = () => {
             <p className="mt-2">Your profile information</p>
           </div>
 
-          {/* avatar upload section */}
 
           <div className="flex flex-col items-center gap-4">
             <div className="relative">

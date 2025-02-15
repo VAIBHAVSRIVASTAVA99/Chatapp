@@ -72,7 +72,6 @@ const ChatContainer = () => {
               </time>
             </div>
             <div className="chat-bubble flex flex-col">
-              {/* Image Attachment */}
               {message.image && (
                 <img
                   src={message.image}
@@ -81,7 +80,6 @@ const ChatContainer = () => {
                 />
               )}
 
-              {/* Video Attachment */}
               {message.video && (
                 <video
                   controls
@@ -92,7 +90,6 @@ const ChatContainer = () => {
                 </video>
               )}
 
-              {/* Text Message */}
               {message.text && <p>{message.text}</p>}
             </div>
           </div>

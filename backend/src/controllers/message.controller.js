@@ -41,7 +41,6 @@ export const sendMessage = async (req, res) => {
 
     let imageUrl, videoUrl;
 
-    // Upload image if provided
     if (image) {
       const uploadResponse = await cloudinary.uploader.upload(image, {
         resource_type: "image", // Ensures only images are uploaded
@@ -49,15 +48,14 @@ export const sendMessage = async (req, res) => {
       imageUrl = uploadResponse.secure_url;
     }
 
-    // Upload video if provided
     if (video) {
       const uploadResponse = await cloudinary.uploader.upload(video, {
-        resource_type: "video", // Ensures only videos are uploaded
+        resource_type: "video", 
       });
       videoUrl = uploadResponse.secure_url;
     }
 
-    // Create new message with text, image, or video
+    
     const newMessage = new Message({
       senderId,
       receiverId,

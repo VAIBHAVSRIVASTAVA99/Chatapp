@@ -8,6 +8,7 @@ import messageRoutes from "./routes/message.auth.js";
 import { app, server } from "./lib/socket.js";
 
 dotenv.config();
+const app = express();
 app.use(express.json());
 app.use(cookieParser());
 

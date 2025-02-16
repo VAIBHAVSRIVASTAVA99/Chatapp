@@ -1,4 +1,5 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 import { Server } from "socket.io";
 import http from "http";
 import cors from "cors";

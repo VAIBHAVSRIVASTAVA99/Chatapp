@@ -1,13 +1,15 @@
+require("dotenv").config();
 import { Server } from "socket.io";
 import http from "http";
 import cors from "cors";
 import express from "express";
 const app = express();
 const server = http.createServer(app);
+app.use(cors());
 
 const io = new Server(server, {
   cors: {
-    origin: "synkr.vercel.app",
+    origin: ["synkr.vercel.app"],
      methods: ["GET", "POST"],
     credentials: true,
   },

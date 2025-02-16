@@ -11,10 +11,7 @@ app.use(cookieParser());
 dotenv.config();
 app.use(express.json());
 
-
-const cors = require("cors");
-
-const corsOptions = {
+export const corsOptions = {
   origin: "https://synkr.vercel.app",
   methods: "GET, POST, PUT, DELETE",
   credentials: true, 

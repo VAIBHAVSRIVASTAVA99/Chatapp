@@ -5,12 +5,12 @@ import cors from "cors";
 import { connectDB } from "./lib/db.js";
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.auth.js";
-import { app, server } from "./lib/socket.js";
+import {server } from "./lib/socket.js";
 
 app.use(cookieParser());
 dotenv.config();
 app.use(express.json());
-
+app.use(cors());
 
 const corsOptions = {
   origin: "https://synkr.vercel.app",

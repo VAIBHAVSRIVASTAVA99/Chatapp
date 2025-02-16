@@ -10,7 +10,6 @@ const io = new Server(server, {
   },
 });
 
-@@ -33,4 +33,4 @@
   });
 });
 

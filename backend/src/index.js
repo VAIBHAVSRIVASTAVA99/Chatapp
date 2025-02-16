@@ -6,7 +6,7 @@ import { connectDB } from "./lib/db.js";
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.auth.js";
 import {server } from "./lib/socket.js";
-
+app=express();
 app.use(cookieParser());
 dotenv.config();
 app.use(express.json());

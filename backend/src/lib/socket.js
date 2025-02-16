@@ -12,7 +12,7 @@ app.use(cors());
 
 const io = new Server(server, {
   cors: {
-    origin: ["https://synkr.vercel.app"],
+    origin: ["http://localhost:5173"],
     methods: ["GET", "POST"],
     credentials: true,
   },

@@ -13,12 +13,10 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
+const cors{
     origin: ["synkr.vercel.app"],
     credentials: true,
-  })
-);
+  }
 app.use(cors(corsOptions)); 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);

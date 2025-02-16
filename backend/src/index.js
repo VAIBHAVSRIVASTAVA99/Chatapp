@@ -6,10 +6,10 @@ import { connectDB } from "./lib/db.js";
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.auth.js";
 import {server } from "./lib/socket.js";
-const app=express();
-app.use(cookieParser());
 dotenv.config();
+const app=express();
 app.use(express.json());
+app.use(cookieParser());
 app.use(cors());
 
 const corsOptions = {

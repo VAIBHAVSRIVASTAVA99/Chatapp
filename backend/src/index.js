@@ -8,18 +8,11 @@ import messageRoutes from "./routes/message.auth.js";
 import {server } from "./lib/socket.js";
 dotenv.config();
 const app = express();  
-app.use(cors());
 app.use(cookieParser());
 
-const corsOptions = {
-  origin: "https://synkr.vercel.app",
-  methods: "GET, POST, PUT, DELETE",
-  credentials: true, 
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
+app.use(cors());
 app.use(express.json());
 
-app.use(cors(corsOptions));
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 

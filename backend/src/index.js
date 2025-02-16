@@ -16,7 +16,9 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-
+app.listen(3000, () => {
+  console.log("Nodejs is running on PORT:5000");
+});
 const PORT = 5001;
 server.listen(PORT, () => {
   console.log("server is running on PORT:" + PORT);

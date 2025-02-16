@@ -9,6 +9,11 @@ const io = new Server(server, {
     origin: "synkr.vercel.app",
   },
 });
+app.use(cors({
+  origin: "https://synkr.vercel.app",
+  methods: ["GET", "POST"],
+  credentials: true,
+}));
 
 export function getReceiverSocketId(userId) {
   return userSocketMap[userId];

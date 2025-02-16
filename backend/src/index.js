@@ -7,10 +7,9 @@ import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.auth.js";
 import {server } from "./lib/socket.js";
 dotenv.config();
-const app=express();
-app.use(express.json());
-app.use(cookieParser());
+const app = express();  
 app.use(cors());
+app.use(cookieParser());
 
 const corsOptions = {
   origin: "https://synkr.vercel.app",
@@ -18,6 +17,7 @@ const corsOptions = {
   credentials: true, 
   allowedHeaders: ["Content-Type", "Authorization"],
 };
+app.use(express.json());
 
 app.use(cors(corsOptions));
 app.use("/api/auth", authRoutes);

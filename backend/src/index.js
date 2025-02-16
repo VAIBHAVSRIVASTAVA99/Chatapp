@@ -16,7 +16,7 @@ app.use(cookieParser());
 const cors{
     origin: ["synkr.vercel.app"],
     credentials: true,
-  }
+  };
 app.use(cors(corsOptions)); 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);

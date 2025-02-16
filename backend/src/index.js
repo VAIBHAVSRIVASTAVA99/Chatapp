@@ -7,9 +7,9 @@ import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.auth.js";
 import { app, server } from "./lib/socket.js";
 
-app.use(cookieParser());
 dotenv.config();
 app.use(express.json());
+app.use(cookieParser());
 
 export const corsOptions = {
   origin: "https://synkr.vercel.app",

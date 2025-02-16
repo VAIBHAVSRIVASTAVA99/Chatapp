@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
-export const corsOptions = {
+const corsOptions = {
   origin: "https://synkr.vercel.app", 
   methods: "GET, POST, PUT, DELETE",
   credentials: true,

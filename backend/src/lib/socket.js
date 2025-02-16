@@ -6,7 +6,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["synkr.vercel.app"],
+    origin: "synkr.vercel.app",
   },
 });
 

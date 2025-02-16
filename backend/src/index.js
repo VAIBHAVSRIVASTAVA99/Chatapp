@@ -9,19 +9,19 @@ import { app, server } from "./lib/socket.js";
 
 app.use(cookieParser());
 dotenv.config();
-
-
-app.use(cors());
-
-const corsOptions = {
-    origin: ["synkr.vercel.app"],
-    methods: "POST,GET,PUT,DELETE,PATCH,HEAD",
-    credentials: true,
-};
-
 app.use(express.json());
 
-app.use(cors(corsOptions)); 
+
+const cors = require("cors");
+
+const corsOptions = {
+  origin: "https://synkr.vercel.app",
+  methods: "GET, POST, PUT, DELETE",
+  credentials: true, 
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
